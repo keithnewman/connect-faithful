@@ -13,7 +13,7 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("Old Faithful Geyser Data on Posit Connect"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
@@ -29,6 +29,14 @@ ui <- fluidPage(
         mainPanel(
            plotOutput("distPlot")
         )
+    ),
+    fluidRow(
+      column(
+        12,
+        p("RSTUDIO_PRODUCT: ", Sys.getenv("RSTUDIO_PRODUCT")),
+        p("FOO", Sys.getenv("FOO")),
+        p("BAR", Sys.getenv("BAR"))
+      )
     )
 )
 
